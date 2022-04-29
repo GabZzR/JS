@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@300;400;500;600;700&display=swap">
+		<link rel="stylesheet" href="./static/css/meteoApp.css">
+
+		<title> Application Météo -api- </title>
+	</head>
+	<body>
+	<div id="app">
+		<div class="full_background">
+
+	      <div class="mainCard"> <!-- card  -->
+
+			<div class='row'>
+				<input type='text' id='searchInput' placeholder="Merci de saisir une ville"/><input type='button' value='go' id='goBtn'></input>
+			</div>
+		    <div class="card_main_image">
+		    	<h3 class='temp'>0°C</h3>
+		     	<img src="./static/img/mountainback.jpg" />
+		    </div>
+		    <div class="card-main-content">
+		      <header >
+		        <div class="row-wrapper">
+		          <h2 class="city-title">City</h2>
+		          <div id="icon">
+					  <img id="wicon" src="./static/img/04n.png" alt="Weather icon">
+				  </div>
+		        </div>
+		      </header>
+		    </div>
+		  </div>
+
+		</div>
+	</div>
+
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+	<script src='./static/js/meteoApp_end.js'>
+	</script>
+</html>

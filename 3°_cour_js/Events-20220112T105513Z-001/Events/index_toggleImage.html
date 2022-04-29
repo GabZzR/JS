@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="base.css">
+		<title> Toggle Image by Andrès </title>
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+	  	<div id="logo">
+	    	<img src="bikeLogo.jpg" alt="logo" />
+	  	</div>
+	</header>
+
+	<div class="container">
+
+	  <h1>Bienvenue sur mon site !</h1>
+
+	  <img id="monImage" src='alex.jpg' />
+	  <p></p>
+
+	</div>
+
+	</body>
+	<script>
+		let monImage = document.getElementById('monImage');
+		let newImage = 'marek.jpg';
+		let oldImage = 'alex.jpg';
+		// console.log(monImage.getAttribute('src'))
+
+
+		let hasClick = false; // un boolean
+
+		function changeImage(){
+			// console.log('hasClick :: ',hasClick);
+			if(hasClick){
+				monImage.src = oldImage
+				hasClick = false;
+			}else{
+				monImage.src = newImage
+				hasClick = true;
+			}
+			// ou optimisation via le point d'exclation qui
+			// modifie en prenant l'opposé de la valeur
+			// particulièremen utile avec les booleans
+			// hasClick=!hasClick
+
+		}
+
+		monImage.addEventListener('click',changeImage)
+
+
+	</script>
+</html>

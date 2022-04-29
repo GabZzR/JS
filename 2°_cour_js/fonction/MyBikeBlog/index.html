@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Taille du viewport à utiliser. Je vous conseiller de copier cette ligne sur tous vos projets -->
+    <link rel="stylesheet" href="bike.css">
+    <title>Blog - Dom & Events </title>
+    <!-- Titre de la page -->
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="bikeLogo.jpg" alt="logo" id="monImage" />
+        </div>
+    </header>
+
+    <div class="container" id='centre'>
+
+        <h1>Bienvenue sur mon site !</h1>
+
+        <p id='p1'><b>Paragraph #1</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <p id="p2"><b>Paragraph #2 </b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+
+</body>
+<script>
+    /*function allumeFour(temperature) {
+                          console.log("j'allume le four a " + temperature + "°")
+                      }
+                      allumeFour(120)
+                      allumeFour(240)
+
+                      function allumeFourTimer(temperature, duree) {
+                          console.log("j'allume le four a " + temperature + "°" + " pour " + duree + " min.")
+                      }
+                      allumeFourTimer(120, 20)
+                      allumeFourTimer(240, 5)*/
+
+    function beautify(id, color) {
+        let elem = document.getElementById(id)
+        elem.style.padding = "15px"
+        elem.style.borderRadius = "20px"
+        elem.style.backgroundColor = color
+
+    }
+    beautify("p1", "red")
+    beautify("p2", "blue")
+
+    let codePromo = "CCI"
+
+    function prixTotal(prix, qty, codeProm) {
+        let total = prix * qty
+
+        if (codeProm === codePromo) {
+            total = total * 0.9
+        }
+        console.log("prix total: " + total + " €")
+    }
+    prixTotal(2, 5, "allezLol")
+    prixTotal(1, 10, "CCI")
+</script>
+
+</html>

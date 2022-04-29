@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="base.css">
+		<title> Events </title>
+
+	</head>
+
+	<body>
+		<header>
+	  	<div id="logo">
+	    	<img src="bikeLogo.jpg" alt="logo" />
+	  	</div>
+	</header>
+
+	<div class="container">
+
+	  	<h1>Bienvenue sur mon site !</h1>
+
+	 	<img id="monImage" src='marek.jpg'/>
+	  	<p id='taille'> hauteur x largeur </p>
+
+	</div>
+
+	</body>
+	<script>
+		let monImage = document.getElementById('monImage')	
+		let p = document.getElementById('taille')
+		monImage.addEventListener('click',testEvent)
+
+		function testEvent(){
+			console.log('testEvent')
+			let w = monImage.width
+			let h = monImage.height
+			p.textContent = h+'px X '+w+'px'
+		}
+
+		testEvent()
+
+
+
+	</script>
+
+
+
+
+</html>

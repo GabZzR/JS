@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="base.css">
+    <title> Div masquer/afficher </title>
+</head>
+
+<body>
+
+    <button id="monBtn">Afficher</button>
+    <div id="maDiv">A la fin de the Leftovers ....</div>
+
+</body>
+<script>
+    let divBtn = document.getElementById("monBtn")
+    let divTxt = document.getElementById("maDiv")
+    divBtn.addEventListener("click", hideShow)
+
+    function hideShow() {
+        if (divTxt.style.display == "block") {
+            divBtn.textContent = "Afficher"
+            divTxt.style.display = "none"
+            divBtn.style.backgroundColor = "red"
+        } else {
+            divBtn.textContent = "Cacher"
+            divTxt.style.display = "block"
+            divBtn.style.backgroundColor = "rgb(6, 224, 6)"
+        }
+    }
+</script>
+
+</html>

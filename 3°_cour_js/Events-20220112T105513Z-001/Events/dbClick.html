@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="base.css">
+		<title> Events Double Click</title>
+
+
+
+
+	</head>
+
+	<body>
+		<header>
+	  	<div id="logo">
+	    	<img src="bikeLogo.jpg" alt="logo" />
+	  	</div>
+	</header>
+
+	<aside>
+	  <h3>Une tuile</h3>
+	  <p>Double-cliquer pour redimensionner cet objet.</p>
+	</aside>
+
+	</body>
+	<script>
+		let card = document.querySelector('aside');
+			card.addEventListener('dblclick', zoomZoom);
+			
+		function zoomZoom(){
+			card.classList.toggle('large');
+		}
+
+
+	</script>
+</html>

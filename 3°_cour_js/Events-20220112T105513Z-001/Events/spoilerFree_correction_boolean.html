@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="base.css">
+		<title> Div masquer/afficher </title>
+
+	</head>
+
+	<body>
+
+		<button id="monBtn">Afficher</button>
+		<div    id="maDiv" >A la fin de the Leftovers ....</div>
+		<div >un autre bloc</div>
+
+	</body>
+	<script>
+		
+		let monBtn = document.getElementById('monBtn')
+		let maDiv  = document.getElementById('maDiv')
+
+
+		// initialisation 
+		// maDiv.style.display='none'
+
+		// attacher un evt sur mon bouton 
+
+		monBtn.addEventListener('click',handleSpoilerBtn)
+
+		let isDisplayed = false
+
+		function handleSpoilerBtn(){
+			
+			// maDiv.style.display='block'
+
+			// console.log('display:c ',maDiv.style.display)
+			
+			if(isDisplayed){
+				monBtn.textContent = 'Afficher'
+				maDiv.style.display = 'none'
+				isDisplayed = false
+
+			}else{
+				monBtn.textContent = 'Cacher'
+				maDiv.style.display = 'block'
+				isDisplayed = true
+
+			}
+			console.log('click sur btn')
+
+		}
+
+
+
+
+
+	</script>
+</html>

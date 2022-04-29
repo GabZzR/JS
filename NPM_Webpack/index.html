@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let monPrenom = "Gabriel"
+    let monNom = "Rosso"
+    console.log("je suis " + monPrenom + " " + monNom)
+
+    let bonjour = `salut salut ${monPrenom}`
+    console.log(bonjour);
+
+    let groupe1 = 20
+    let groupe2 = 10
+    console.log(`nombre d'élèves total ${groupe1+groupe2}`);
+
+    let cUser = {
+        firstName: "Kawabata",
+        lastName: "Makoto"
+    };
+    console.log(`Excellent dernier album de ${cUser.firstName.toUpperCase()}.`);
+
+    function salut(qui) {
+        return `Hey salut ${qui}`
+    }
+    let saluT = (qui) => {
+        `hey Salut ${qui}`
+    }
+
+    saLut = (qui) => `Hey salut ${qui}`
+
+    document.title = salut('Edouard')
+</script>
+
+</html>

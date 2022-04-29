@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="intro.css">
+    <title> Javascript - Introduction </title>
+    <!-- Titre de la page -->
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="jsIcon.jpg" alt="logo" id="monImage" />
+        </div>
+    </header>
+
+    <div class="container">
+
+        <h1> Bienvenue sur mon site !</h1>
+
+        <div class='subDiv'>
+            <div class='babyDiv' id='divOne'></div>
+            <div class='babyDiv alert' id='divTwo'></div>
+            <div class='babyDiv' id='divThree'></div>
+        </div>
+
+        <div class='btns'>
+
+            <button id='add'> add </button>
+            <button id='remove'> remove </button>
+            <button id='toggle'> toggle </button>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    let divOne = document.getElementById('divOne')
+    let divTwo = document.getElementById('divTwo')
+    let divThree = document.getElementById('divThree')
+
+    let btnAdd = document.getElementById('add')
+    let btnRemove = document.getElementById('remove')
+    let btnToggle = document.getElementById('toggle')
+
+    btnAdd.addEventListener('mouseenter', addClass);
+    btnRemove.addEventListener('mouseenter', removeClass);
+    btnToggle.addEventListener('mouseenter', toggleClass);
+
+    function addClass() {
+        divOne.classList.add('success')
+    }
+
+    function removeClass() {
+        divTwo.classList.remove('alert')
+    }
+
+    function toggleClass() {
+        divThree.classList.toggle('highlight')
+    }
+</script>
+
+</html>

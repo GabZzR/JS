@@ -1,0 +1,7 @@
+ // Ajouter un bouton "delete" sur chacune des lignes de dépenses
+
+- vous aurez sûrement besoin d'un tableau et d'objets
+- comment allez-vous savoir sur quel item vous avez cliqué ? 
+- comment remettre à jour le total des dépenses et la balance après chaque suppression ? 
+- vous pouvez ajouter directement un € à la fin du montant (en Css!)
+

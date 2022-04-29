@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title> Intro Vue.js Compteur </title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            margin: 0;
+            background: #2A265F;
+            border-bottom: 1px solid grey;
+        }
+        
+        .navigation li {
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            color: white;
+            text-align: center;
+        }
+        
+        h3 {
+            padding: 1em;
+        }
+        
+        .container {
+            margin-top: 2rem;
+            margin-left: 2rem;
+            display: flex;
+        }
+        
+        .recordsList {
+            width: 820px;
+        }
+        
+        .infos {
+            width: 320px;
+        }
+        
+        .card {
+            background-color: #eeeef3;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            max-width: 100%;
+            overflow: hidden;
+            margin-bottom: 16px;
+            width: 700px;
+        }
+        
+        .card h4 {
+            opacity: 0.6;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .card h2 {
+            letter-spacing: 1px;
+            margin: 10px 0;
+        }
+        
+        .infos {
+            padding: 20px;
+        }
+        
+        .btn {
+            background-color: #2A265F;
+            border: 0;
+            border-radius: 50px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 12px;
+            margin-top: 10px;
+            margin-left: 25px;
+            margin-bottom: 10px;
+            padding: 6px 10px;
+        }
+        
+        .negatif {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <ul class="navigation">
+            <li>Lien vers la Home</li>
+            <li>Discographie complète</li>
+        </ul>
+        <h3> {{appTitle}} </h3>
+        <div class="container">
+
+            <div class='recordsList'>
+                <div>
+                    <div class="card">
+                        <button class="btn" @click="decrement">
+                        GROS BOUTON -
+                    </button>
+                        <button class="btn" @click="increment">
+                        GROS BOUTON +
+                    </button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class='infos card'>
+                Compteur :
+                <h1 :class="negativeClass">{{compteur}}</h1>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" charset="utf-8"></script>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: () => ({
+                appTitle: "Mon compteur en vueJs",
+                compteur: 0,
+                negativeClass: ''
+            }),
+            methods: {
+                increment() {
+                    this.compteur++
+                        if (this.compteur < 0) {
+                            this.negativeClass = 'negatif'
+                        } else {
+                            this.negativeClass = ''
+                        }
+                },
+                decrement() {
+                    this.compteur--
+                        if (this.compteur < 0) {
+                            this.negativeClass = 'negatif'
+                        } else {
+                            this.negativeClass = ''
+                        }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

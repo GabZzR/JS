@@ -1,0 +1,8 @@
+Créer deux composants : 
+
+    un pour la card principale avec ses props/slot 
+    un pour la zone "stack" qui gêre automatiquement le nom et le level avec les étoiles 
+
+le composant Stack sera bien un enfant de la Card Teams 
+
+Pour finir vous pouvez faire le v-for pour afficher n-fois votre tout nouveau composant Card 

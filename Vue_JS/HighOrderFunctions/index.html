@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="./static/css/highOrderStyle.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>High Order Functions</title>
+
+  </head>
+
+<body>
+    <div class="header">
+        <h1> High Order Function </h1>
+    </div>
+
+    <div class='main'>
+        <!-- forEach -->
+        <div class="row">
+            <div class="col">
+                <h3>Itérer: <span class='blue'>forEach</span> (pourChaque)</h3>
+                <p>La méthode arr.forEach permet d’exécuter une fonction pour chaque élément du tableau.
+                    <br/>Elle conserve le tableau d'entrée!
+                </p>
+                <pre>
+<code class="language-javascript">
+let prenoms=['Alma','Coline','Edmond']
+prenoms.forEach((elem,idx)=> {
+  prenoms[idx]=elem.toUpperCase()
+})
+console.log(prenoms)
+</code>
+                </pre>
+
+                <button class='test-button'>Test</button>
+            </div>
+            <div class="col">
+                <h3>Résultat</h3>
+                <p></p>
+            </div>
+        </div>
+        <!-- map -->
+        <div class="row">
+            <div class="col">
+                <h3>Itérer: <span class='blue'>map</span> </h3>
+                <p>La méthode arr.map est l’une des plus utiles et des plus utilisées.
+                    Elle appelle la fonction pour chaque élément du tableau et
+                 retourne le tableau de résultats.</p>
+<pre>
+<code class="language-javascript">
+let prenoms=['Alma','Coline','Edmond']
+let majPrenoms = prenoms.map((elem)=> {
+  return elem.toUpperCase()
+})
+console.log(majPrenoms)
+</code>
+</pre>
+                <button class='test-button'>Test</button>
+            </div>
+            <div class="col">
+                <h3>Résultat</h3>
+                <p></p>
+            </div>
+        </div>
+        <!-- sort -->
+        <div class="row">
+            <div class="col">
+                <h3>Trier: <span class='blue'>sort</span> </h3>
+                <p>La méthode arr.sort permet de trier un tableau en fonction d'une méthode de trie <br/> le tableau d'entrée est modifié!</p>
+<pre>
+<code class="language-javascript">
+let prenoms=['Edmond','Alma','Medhi']
+prenoms.sort((a,b)=> {
+  return a.localeCompare(b)
+})
+
+console.log(prenoms)
+
+
+let tableauObjects = [
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 }
+];
+tableauObjects.sort(function (a, b) {
+  return a.value - b.value;
+});
+
+console.log(tableauObjects)
+</code>
+</pre>
+                <button class='test-button'>Test</button>
+            </div>
+            <div class="col">
+                <h3>Résultat</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- filter -->
+        <div class="row">
+            <div class="col">
+                <h3>Filtrer: <span class='blue'>filter</span> </h3>
+                <p>La méthode arr.filter permet d'exclure via un filtre des éléments d'un tableau
+                <br/>filter renvoie un nouveau tableau!</p>
+<pre>
+<code class="language-javascript">
+let notes = [18, 10, 5, 2, 14];
+let onlyMoyenne = notes.filter((note) => note >= 10);
+
+console.log(onlyMoyenne);
+
+let tableauObjects = [
+  { name: "Edward", value: 12 },
+  { name: "Sharpe", value: 5 },
+  { name: "And", value: 8 },
+  { name: "The", value: 0 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 18 }
+];
+let onlyMoyenneObj = tableauObjects.filter((note) => note.value >=10)
+
+
+console.log(onlyMoyenneObj);
+</code>
+</pre>
+                <button class='test-button'>Test</button>
+            </div>
+            <div class="col">
+                <h3>Résultat</h3>
+                <p></p>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Exercice : compter le nombre de point</h3>
+                <p></p>
+                <code><pre>
+                    arr.forEach(function(item, index, array) {
+                      // ... fait quelques chose avec l'élément
+                    });
+                </pre></code>
+                <button class='test-button'>Test</button>
+            </div>
+            <div class="col">
+                <h3>Résultat</h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script  src="./static/js/high.js"></script>
+</html>

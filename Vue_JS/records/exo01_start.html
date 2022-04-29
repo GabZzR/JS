@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Exo 1' - CCI - Records </title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            list-style: none;
+            margin: 0;
+            background: #2A265F;
+            border-bottom: 1px solid grey;
+        }
+        
+        .navigation li {
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            color: white;
+            text-align: center;
+        }
+        
+        h3 {
+            padding: 1em;
+        }
+        
+        .container {
+            margin-top: 2rem;
+            margin-left: 2rem;
+            display: flex;
+        }
+        
+        .recordsList {
+            width: 820px;
+        }
+        
+        .infos {
+            width: 320px;
+        }
+        
+        .card {
+            background-color: #eeeef3;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            max-width: 100%;
+            overflow: hidden;
+            margin-bottom: 16px;
+            width: 700px;
+        }
+        
+        .card-fav {
+            background-color: #B4EDF9;
+            box-shadow: 0 10px 10px rgba(155, 5, 249, 0.8);
+        }
+        
+        .card h4 {
+            opacity: 0.6;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .card h2 {
+            letter-spacing: 1px;
+            margin: 10px 0;
+        }
+        
+        .album-preview {
+            background-color: #2A265F;
+            color: #fff;
+            padding: 20px;
+            max-width: 250px;
+        }
+        
+        .course-info {
+            padding: 30px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .stock-container {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            text-align: right;
+            width: 100px;
+        }
+        
+        .stock-text {
+            font-size: 12px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        
+        .btn {
+            background-color: #2A265F;
+            border: 0;
+            border-radius: 50px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 12px;
+            margin-top: 10px;
+            padding: 6px 10px;
+        }
+        
+        .infos {
+            background-color: #E7EFFF;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navigation">
+        <li>Template VueJS</li>
+        <li>Disco</li>
+    </ul>
+    <h3> Ma playlist de rentrée </h3>
+    <div class="container" id='app'>
+
+        <div class='recordsList'>
+
+            <div>
+                <div class="card" v-for="toto in records">
+                    <div class="album-preview">
+                        <img height='100px' :src="toto.coverUrl" alt="">
+                    </div>
+                    <div class="course-info">
+                        <div class="stock-container">
+                            <span class="stock-text">
+        					{{toto.stock}} in Stock
+        				</span>
+                        </div>
+                        <!--Artiste-->
+                        <h4>{{toto.artist}}</h4>
+                        <!--Album-->
+                        <h2>{{toto.title}}</h2>
+                        <span>{{toto.year}}</span>
+                        <br><br>
+                        <div class='infos'>
+                            {{toto.comment}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" charset="utf-8"></script>
+    <script src="./static/js/allRecords.js" charset="utf-8"></script>
+    <script>
+        console.log(records[0]);
+        var app = new Vue({
+            el: '#app',
+            data: () => ({
+                records: records
+            })
+        })
+    </script>
+</body>
+
+</html>

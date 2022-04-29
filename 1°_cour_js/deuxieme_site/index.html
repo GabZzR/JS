@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Taille du viewport à utiliser. Je vous conseiller de copier cette ligne sur tous vos projets -->
+    <link rel="stylesheet" href="sun.css">
+    <title>Conditions & dates</title>
+    <!-- Titre de la page -->
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="night.jpg" alt="logo" id="monImage" />
+        </div>
+    </header>
+
+    <div class="container">
+
+        <h1 id='title'>Bienvenue sur mon site !</h1>
+        <h3 id='subtitle'>Heure courante</h3>
+
+
+    </div>
+
+</body>
+<script>
+    var monImage = document.getElementById("monImage")
+    var date = new Date()
+    let now = date.getHours()
+    now = 10
+    var charToAdd = "";
+    if (date.getSeconds < 10) {
+        charToAdd = "0"
+    }
+
+    document.getElementById("subtitle").innerHTML = "Heure courante : <h3>" + now + ":" + date.getMinutes() + ":" + charToAdd + date.getSeconds() + "</h3>"
+        /*document.getElementById("subtitle").innerHTML = "Heure courante : <h3>" + now + " heure" + charToAdd + "</h3>"*/
+
+    function RefreshDate() {
+        var date = new Date()
+    }
+
+    setInterval("RefreshDate()", 1000)
+
+    if (now > 5 && now <= 9) {
+        monImage.src = "sunrise.jpg"
+    } else
+    if (now > 9 && now <= 17) {
+        monImage.src = "zenith.jpg"
+    } else if (now > 17 && now <= 22) {
+        monImage.src = "sunset.jpg"
+    }
+
+    if (now > 24) {
+        document.getElementById("subtitle").innerHTML = "ERROR"
+    }
+</script>
+
+</html>

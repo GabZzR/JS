@@ -1,0 +1,18 @@
+{
+  "name": "npm_test",
+  "version": "1.0.0",
+  "description": "\"un premier test\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabz",
+  "license": "ISC",
+  "dependencies": {
+    "ionicons": "^6.0.1",
+    "random": "^3.0.6"
+  },
+  "devDependencies": {
+    "chalk": "^5.0.1"
+  }
+}
